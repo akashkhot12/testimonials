@@ -15,9 +15,17 @@ connectionsWithDatabase.connect((err)=>{
 })
 
 
-connectionsWithDatabase.query(
-    `create table testo`
-)
+connectionsWithDatabase.query(`
+   CREATE TABLE IF NOT EXISTS testimonials (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) 
+    `)
+
 
 
 module.exports = connectionsWithDatabase;
