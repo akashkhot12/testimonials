@@ -23,8 +23,7 @@ connectionsWithDatabase.query(`
     company_name VARCHAR(255) NOT NULL,
     created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) 
-    `)
+) `);
 
 
 
