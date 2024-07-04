@@ -1,9 +1,9 @@
 const connetions = require("./connections");
 
 const getTestimonial = async (req, res) => {
-  await connetions.query("SELECT * FROM testimonials", (err, results) => {
+  await connetions.query("SELECT * FROM testimonials", (err, data) => {
     if (err) return res.status(500).json({ message: err });
-    return res.status(200).json({ message: results });
+    return res.json(data)
   });
 };
 
